@@ -1,0 +1,39 @@
+<h1>Maze Escape: Ball vs Square</h1>
+
+<div id="startScreen">
+  <h2>Как играть</h2>
+
+  <p>
+    W — вверх<br>
+    A — влево<br>
+    S — вниз<br>
+    D — вправо
+  </p>
+
+  <p>
+    🔵 Убегай от квадрата<br>
+    🧱 Не проходи сквозь стены<br>
+    🟢 Доберись до выхода<br>
+    ❤️ 3 жизни
+  </p>
+
+  <button id="startBtn">▶ Старт</button>
+</div>
+
+<div id="ui">
+  ❤️ Жизни: <span id="lives">3</span>
+
+  <select id="difficulty">
+    <option value="0">Новичок</option>
+    <option value="1">Лёгкий</option>
+    <option value="2">Средний</option>
+    <option value="3">Сложный</option>
+    <option value="4">Невозможный</option>
+  </select>
+
+  <button id="restartBtn" style="display:none;">🔄 Рестарт</button>
+</div>
+
+<canvas id="game" width="640" height="400"></canvas>
+
+<p id="message"></p>
