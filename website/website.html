@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Maze Escape Game</title>
+  <style>
+    /* ===== BASIC PAGE STYLE ===== */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      text-align: center;
+    }
+
+    header {
+      padding: 20px;
+      background: #222;
+    }
+
+    h1 { margin: 0; }
+
+    section { padding: 30px; }
+
+    /* ===== SCREENSHOT GALLERY ===== */
+    .gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 250px;
+      border: 2px solid white;
+      border-radius: 10px;
+    }
+
+    /* ===== IMAGE UPLOAD ===== */
+    .upload-container {
+      margin-top: 20px;
+    }
+
+    input[type="file"] {
+      padding: 10px;
+      background: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    #preview {
+      max-width: 250px;
+      margin-top: 15px;
+      border: 2px solid white;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Maze Escape</h1>
+  <p>Krugok tries to escape the labyrinth while Kvadlatik chases him.</p>
+</header>
+
+<!-- ===== ABOUT GAME ===== -->
+<section>
+  <h2>About the Game</h2>
+  <p>
+    This is a 2D labyrinth game where the main character, Krugok (a circle),
+    must escape from a maze. The villain, Kvadlatik (a square), is constantly
+    chasing him. The player must navigate through obstacles and avoid being caught.
+  </p>
+</section>
+
+<!-- ===== SCREENSHOTS ===== -->
+<section>
+  <h2>Game Screenshots</h2>
+  <div class="gallery">
+    <!-- You can replace these images with your real screenshots -->
+    <img src= 'https://i.postimg.cc/nzDzkvLR/image-krugok-removebg-preview.png'; alt="Gameplay 1">
+    <img src='https://i.postimg.cc/HLPc3Y9Y/image-kvadlatik-removebg-preview.png'; alt="Gameplay 2">
+   
+  </div>
+</section>
+
+<!-- ===== UPLOAD YOUR OWN IMAGE ===== -->
+<section>
+  <h2>Add Your Own Character Image</h2>
+  <div class="upload-container">
+    <input type="file" id="imageUpload" accept="image/*">
+    <br>
+    <img id="preview" src="" alt="Your image will appear here">
+  </div>
+</section>
+
+<script>
+// ===== IMAGE UPLOAD PREVIEW =====
+document.getElementById("imageUpload").addEventListener("change", function(event) {
+  const file = event.target.files[0];
+
+  if (file) {
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+      // Show uploaded image on the page
+      document.getElementById("preview").src = e.target.result;
+    };
+
+    reader.readAsDataURL(file);
+  }
+});
+</script>
+
+</body>
+</html>
